@@ -1,0 +1,44 @@
+Segmentación de red y IPv4
+
+Una dirección IPv4 contiene dos partes. La parte de la red define la red (o una subred) donde se encuentra el host y la parte del host identifica la dirección del host en la red,
+La máscara de subred se utiliza para definir la porción de red del direccionamiento IPv4 a través del AND lógico de la dirección IP y la máscara de subred.
+
+En redes planas donde todos los hosts están en la misma red, los paquetes de difusión pueden degradar rápidamente la calidad del rendimiento de la red. 
+Con la creación de subredes más pequeñas, el tráfico de difusión se aísla de otras áreas de la red.  Los dispositivos en una subred deben enviar tráfico a un router,
+                                                        para alcanzar un host en una subred diferente, y los routers generalmente no reenvían el tráfico de difusión.
+
+Una difusión dirigida es un mensaje enviado a todos los hosts en una red específica. Es útil para enviar una difusión a todos los hosts en una red no local. 
+Un mensaje de multidifusión es un mensaje enviado a un grupo seleccionado de hosts que forman parte de un grupo de multidifusión suscrito. 
+Una difusión limitada se utiliza para una comunicación que se limita a los hosts en la red local. Un mensaje de unidifusión es un mensaje enviado de un host a otro.
+
+Las direcciones IPv4 en el bloque de direcciones 169.254.0.0 a 169.254.255.255 son direcciones de enlace local. 
+El sistema operativo de un host puede asignar automáticamente una dirección de este bloque al host en caso de que no haya ninguna configuración IP disponible, 
+Un ejemplo es cuando un host está configurado para obtener una dirección IP dinámica pero no puede alcanzar ningún servidor DHCP durante el proceso de arranque. 
+                                                                                  En tal caso, el sistema operativo puede asignar una dirección local de enlace.
+
+direcciones IP privadas:
+  10.0.0.0 - 10.255.255.255
+    172.16.0.0 - 172.31.255.255
+      192.168.0.0 - 192.168.255.255
+
+- 127.0.0.1	Dirección de bucle invertido
+  - 240.2.6.255	Dirección experimental
+    - 198.133.219.2	Dirección pública
+      - 169.254.1.5	Dirección de enlace local.
+
+Los dispositivos de capa 1 y 2 (switch LAN y hub Ethernet) y los dispositivos de punto de acceso no filtran las tramas de difusión MAC. 
+                                    Solo los dispositivos de capa 3, como los routers, pueden dividir un dominio de difusión de capa 2.
+
+Cuatro organizaciones muy importantes que crean y mantienen estándares abiertos son:
+
+La Autoridad de Números Asignados de Internet (Internet Assigned Numbers Authority - IANA) 
+supervisa y administra la asignación de direcciones IP y nombres de dominio para preservar su singularidad.
+
+La Alianza de Industrias Electrónicas (Electronic Industries Alliance - EIA) mantiene estándares relacionados con el cableado, 
+                              los conectores para garantizar la interoperabilidad del cableado entre los diferentes dispositivos.
+
+Grupo de Trabajo de Ingeniería de Internet (Internet Engineering Task Force - IETF) mantiene las tecnologías y los protocolos utilizados en Internet, como TCP / IP. 
+
+Sociedad de Internet (Internet Society - ISOC) promueve el uso de Internet en todo el mundo.
+
+- Las direcciones IPv4 de multidifusión usan el rango de direcciones clase D reservado a 224.0.0.0 a 239.255.255.255 -.
