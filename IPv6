@@ -1,0 +1,21 @@
+  Las direcciones IPv6 tienen una longitud de 128 bits y se escriben como una cadena de valores hexadecimales. 
+Cada cuatro bits está representado por un solo dígito hexadecimal; para un total de 32 valores hexadecimales. 
+Las direcciones IPv6 no distinguen entre mayúsculas y minúsculas, y pueden escribirse en minúsculas o en mayúsculas. 
+
+  En IPv6, un hexteto que se refiere a un segmento de 16 bits o cuatro valores hexadecimales. Cada "x" es un único hexteto que tiene 16 bits o cuatro dígitos hexadecimales. 
+El formato preferido significa que dirección IPv6 se escribe utilizando los 32 dígitos hexadecimales. Aquí hay un ejemplo: fe80:0000:0000:0000:0123:4567:89ab:cdef.
+Dos reglas ayudan a reducir el número de dígitos necesarios para representar una dirección IPv6.
+
+Regla 1: Omitir los ceros iniciales Solo puede omitir ceros a la izquierda, no ceros a la izquierda.
+
+01ab se puede representar como 1ab
+09f0 se puede representar como 9f0
+0a00 se puede representar como a00
+00ab se puede representar como ab
+
+  Regla 2 - Dos puntos dobles Los dos puntos dobles (::) pueden reemplazar cualquier cadena única y contigua de uno o más segmentos de 16 bits (hextetos) que estén compuestas solo por ceros. 
+Por ejemplo, 2001:db8:cafe: 1:0:0:0:1 (0 iniciales omitidos) podría representarse como 2001:db8:cafe:1: :1. 
+Los dos puntos dobles (: :) se utilizan en lugar de los hextetos de tres ceros (0: 0: 0). Los dos puntos dobles (::) se pueden utilizar solamente una vez dentro de una dirección; 
+de lo contrario, habría más de una dirección resultante posible. Si una dirección tiene más de una cadena contigua de hextetos, todos 0, la práctica recomendada es usar los dos puntos dobles (::) en la cadena más larga. 
+
+Si las cadenas son iguales, la primera cadena debe usar los dos puntos dobles (::).
